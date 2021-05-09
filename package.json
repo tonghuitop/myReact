@@ -1,0 +1,22 @@
+{
+  "name": "myreact",
+  "version": "1.0.0",
+  "description": "一个简易版的react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonghuitop/myReact.git"
+  },
+  "keywords": [
+    "hui918918"
+  ],
+  "author": "tonghuitop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonghuitop/myReact/issues"
+  },
+  "homepage": "https://github.com/tonghuitop/myReact#readme"
+}
