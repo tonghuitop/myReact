@@ -1,0 +1,8 @@
+{
+  "presets": ["env"], //覆盖范围（最新语法转换成浏览器支持的语法）
+  "plugins": [
+    ["@babel/plugin-transform-react-jsx",{
+      "pragma": "myReact.createElement" 
+    }]
+  ]
+}
