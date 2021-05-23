@@ -1,6 +1,7 @@
 import MyReact from '../lib/myReact'
 
 class Fraction extends MyReact.Component {
+  defaultName = 'Fraction'
   constructor(props) {
     super(props)
     this.state = {
@@ -11,8 +12,8 @@ class Fraction extends MyReact.Component {
   handleComeOn = () => {
     const { onComeOn } = this.props
     const { fraction: olFraction } = this.state
-    this.setState({ fraction: olFraction + 1 })
     onComeOn()
+    this.setState({ fraction: olFraction + 1 })
   }
 
   render() {
