@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+# $HUSKY_GIT_PARAMS变量就是commit-msg钩子传递的文件路径参数
+npx commitlint -e $HUSKY_GIT_PARAMS

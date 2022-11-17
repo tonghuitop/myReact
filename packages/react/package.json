@@ -1,0 +1,10 @@
+{
+  "name": "react",
+  "version": "0.0.0",
+  "description": "React主模块",
+  "main": "index.ts",
+  "keywords": [],
+  "dependencies": {
+    "shared": "workspace:*"
+  }
+}
