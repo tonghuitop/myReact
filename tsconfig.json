@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "sourceMap": false,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -15,5 +16,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "noImplicitReturns": true,
-  }
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+  },
+  "include": ["packages"]
 }

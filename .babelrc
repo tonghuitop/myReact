@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    [
+      "@babel/plugin-transform-react-jsx",
+			{
+				"throwIfNamespace": false,
+				"runtime": "automatic" // 自动导入 JSX 转换成的函数
+			}
+    ]
+  ]
+}

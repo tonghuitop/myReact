@@ -2,6 +2,8 @@
 export type Container = Element | Document
 /** 实例 */
 export type Instance = Element
+/** 文本 */
+export type TextInstanve = Text
 
 /**
  * 创建真是的 DOM
