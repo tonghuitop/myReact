@@ -6,26 +6,34 @@ import { Flags, NoFlags } from './FiberFlags'
 import { FunctionComponent, HostComponent, WorkTag } from './workTags'
 
 export class FiberNode {
-	// 在开始执行时设置的props参数
+	/** 新的变动，带来新的props */
 	pendingProps: Props
+	/** 上一次渲染完的props */
 	memoizedProps: Props | null
 	key: Key
+	/** 跟当前Fiber相关本地状态（比如浏览器就是DOM节点） */
 	stateNode: any
+	/** 对于 FunctionComponent,指函数本身，对于ClassComponent，指class，对于HostComponent，指DOM节点tagName */
 	type: any
 	ref: Ref
+	/** Fiber对应组件的类型 Function/Class/Host... */
 	tag: WorkTag
 	flags: Flags
+	/** 子树的flag */
 	subtreeFlags: Flags
 
+	/** 指向父节点 */
 	return: FiberNode | null
+	/** 指向兄弟节点 */
 	sibling: FiberNode | null
+	/** 只想自己的第一个子节点 */
 	child: FiberNode | null
 	index: number
-
+	/** 该Fiber对应的组件产生的Update会存在这个队列里面 */
 	updateQueue: UpdateQueue | null
-	// 当前 state
+	/** 上一次渲染的时候的 state */
 	memoizedState: any
-
+	/** 连接 workInProgress 树 与 current Fiber树 */
 	alternate: FiberNode | null
 
 	constructor(tag: WorkTag, pendingProps: Props, key: Key) {
@@ -58,7 +66,7 @@ export class FiberNode {
 }
 
 /**
- * 根 fiberRoot
+ * fiberRoot 应用跟节点，唯一的
  */
 export class FiberRootNode {
 	container: Container
@@ -82,6 +90,12 @@ export function createFiberFromElement(element: ReactElement): FiberNode {
 	return fiber
 }
 
+/**
+ * 创建 workInPropgress fiber
+ * @param current
+ * @param pendingProps
+ * @returns
+ */
 export const createWorkInPropgress = (
 	current: FiberNode,
 	pendingProps: Props

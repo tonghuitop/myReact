@@ -11,6 +11,7 @@ import { mountChildFibers, reconcileChildFibers } from './childFiber'
  * @returns
  */
 export const beginWork = (workInProgress: FiberNode) => {
+	// mount
 	switch (workInProgress.tag) {
 		case HostRoot:
 			return updateHostRoot(workInProgress)

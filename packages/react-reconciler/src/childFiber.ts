@@ -5,6 +5,13 @@ import { Placement } from './FiberFlags'
 import { createFiberFromElement, FiberNode } from './fiber'
 
 const ChildReconciler = (shouldTrackEffect: boolean) => {
+	/**
+	 * 协调单一元素
+	 * @param returnFiber
+	 * @param currentFirstChild
+	 * @param element
+	 * @returns
+	 */
 	const reconcileSingleElement = (
 		returnFiber: FiberNode,
 		currentFirstChild: FiberNode | null,

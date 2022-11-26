@@ -31,6 +31,10 @@ const appendAllChildren = (parent: Instance, workInProgress: FiberNode) => {
 	}
 }
 
+/**
+ * 冒泡
+ * @param completeWork
+ */
 const bubbleProperties = (completeWork: FiberNode) => {
 	let subtreeFlags = NoFlags
 	let child = completeWork.child

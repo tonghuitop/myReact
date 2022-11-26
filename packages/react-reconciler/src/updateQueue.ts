@@ -28,7 +28,7 @@ export const enqueueUpdate = (fiber: FiberNode, update: Update) => {
 	}
 }
 
-// 初始化
+/** 创建更新的循环队列 */
 export const initializeUpdateQueue = (fiber: FiberNode) => {
 	fiber.updateQueue = {
 		shared: {

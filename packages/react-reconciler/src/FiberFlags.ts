@@ -6,6 +6,7 @@ export const NoFlags = /*                      */ 0b00000000000000000000000000
 export const PerformedWork = /*                */ 0b00000000000000000000000001
 
 // fiber 状态
+/** 意味着 Fiber 节点 对应的 DOM 节点 需要插入页面中 */
 export const Placement = /*                    */ 0b00000000000000000000000010
 export const Update = /*                       */ 0b00000000000000000000000100
 export const Deletion = /*                     */ 0b00000000000000000000001000
