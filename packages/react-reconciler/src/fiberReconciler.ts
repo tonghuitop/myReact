@@ -13,7 +13,7 @@ import {
 export const createContainer = (container: Container) => {
 	// 创建rootFiber 组件树 的根节点
 	const hostRootFiber = new FiberNode(HostRoot, {}, null)
-	// 创建 fiberRoot 应用跟节点，唯一的
+	// 创建 fiberRoot 应用根节点，唯一的
 	const root = new FiberRootNode(container, hostRootFiber)
 	initializeUpdateQueue(hostRootFiber)
 	return root

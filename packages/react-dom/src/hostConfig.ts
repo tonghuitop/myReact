@@ -15,10 +15,26 @@ export const createInstance = (type: string) => {
 }
 
 /**
+ * 创建文本DOM
+ * @param content
+ * @returns
+ */
+export const createTextInstance = (content: string) => {
+	return document.createTextNode(content)
+}
+
+/**
  * 原生DOM 添加子 DOM
  * @param parent
  * @param child
  */
 export const appendInitialChild = (parent: Instance, child: Instance) => {
 	parent.appendChild(child)
+}
+
+export const appendChildToContainer = (
+	child: Instance,
+	container: Container
+) => {
+	container.appendChild(child)
 }

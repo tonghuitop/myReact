@@ -25,6 +25,8 @@ const ChildReconciler = (shouldTrackEffect: boolean) => {
 		fiber.return = returnFiber
 		return fiber
 	}
+
+	/**  */
 	const placeSingleChild = (fiber: FiberNode) => {
 		if (shouldTrackEffect) {
 			fiber.flags |= Placement

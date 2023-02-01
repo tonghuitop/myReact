@@ -31,10 +31,11 @@ const updateHostComponent = (workInProgress: FiberNode) => {
 	return workInProgress.child
 }
 
+/** 更新跟fiber  */
 const updateHostRoot = (workInProgress: FiberNode) => {
 	processUpdateQueue(workInProgress)
 	const nextChildren = workInProgress.memoizedState
-	reconcileChildFibers(workInProgress, nextChildren)
+	reconcileChildren(workInProgress, nextChildren)
 	return workInProgress.child
 }
 

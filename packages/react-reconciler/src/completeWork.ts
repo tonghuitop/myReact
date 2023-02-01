@@ -32,7 +32,7 @@ const appendAllChildren = (parent: Instance, workInProgress: FiberNode) => {
 }
 
 /**
- * 冒泡
+ * 根据 fiber.child 及 fiber.child.sibling 更新 subtreeFlags 和 childLanes
  * @param completeWork
  */
 const bubbleProperties = (completeWork: FiberNode) => {
@@ -48,12 +48,17 @@ const bubbleProperties = (completeWork: FiberNode) => {
 	completeWork.subtreeFlags |= subtreeFlags
 }
 
+/**
+ * 从 fiber 对象 转变成真实的 DOM 节点
+ * @param workInProgress
+ * @returns
+ */
 export const completeWork = (workInProgress: FiberNode) => {
 	switch (workInProgress.tag) {
 		case HostComponent:
-			// 初始化 DOM
+			// fiber 不存在 DOM 节点，先创建 DOM 节点
 			const instance = createInstance(workInProgress.type)
-			// 挂载DOM
+			// 将子孙 DOM 节点插入刚生成的 DOM 节点中，以此从下往上构成完成的 DOM 树
 			appendAllChildren(instance, workInProgress)
 			workInProgress.stateNode = instance
 

@@ -18,6 +18,7 @@ export class FiberNode {
 	ref: Ref
 	/** Fiber对应组件的类型 Function/Class/Host... */
 	tag: WorkTag
+	/** fiber 状态 */
 	flags: Flags
 	/** 子树的flag */
 	subtreeFlags: Flags
@@ -26,7 +27,7 @@ export class FiberNode {
 	return: FiberNode | null
 	/** 指向兄弟节点 */
 	sibling: FiberNode | null
-	/** 只想自己的第一个子节点 */
+	/** 指向自己的第一个子节点 */
 	child: FiberNode | null
 	index: number
 	/** 该Fiber对应的组件产生的Update会存在这个队列里面 */
@@ -71,10 +72,12 @@ export class FiberNode {
 export class FiberRootNode {
 	container: Container
 	current: FiberNode
+	finishedWork: FiberNode | null
 	constructor(container: Container, hostRootFiber: FiberNode) {
 		this.container = container
 		this.current = hostRootFiber
 		hostRootFiber.stateNode = this
+		this.finishedWork = null
 	}
 }
 
